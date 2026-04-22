@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #2c1892;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 480px;
+}
+
+h2 { margin: 0 0 4px; }
+.subtitulo { color: #888; font-size: 13px; margin: 0 0 1.5rem; }
+
+label {
+    display: block;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+    margin-top: 1rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 10px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+a { display: block; margin-top: 1rem; color: #1a73e8; }
