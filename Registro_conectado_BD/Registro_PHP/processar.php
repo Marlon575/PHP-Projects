@@ -1,26 +1,48 @@
-<?php 
+<?php
 include 'config.php';
-$nome = $_POST['nome_completo'];
+
+$pin_admin1 = "1234";
+$pin_admin2 = "5678";
+
+$nome     = $_POST['nome_completo'];
 $username = $_POST['username'];
 $password = $_POST['password'];
-$curso = $_POST['user_de_criacao'];
-$data = date('Y-m-d');
+$pin      = $_POST['pin'];
+$curso    = $_POST['curso'];
+$data     = date('Y-m-d');
+
+if ($pin === $pin_admin1) {
+    $user_de_criacao = "Admin1";
+} elseif ($pin === $pin_admin2) {
+    $user_de_criacao = "Admin2";
+} else {
+    die("<div style='font-family:sans-serif; text-align:center; margin-top:50px;'>
+        <p style='color:red; font-size:20px;'>❌ PIN inválido!</p>
+        <p>Não tens permissão para registar utilizadores.</p>
+        <br><a href='../index.php'>← Voltar</a>
+    </div>");
+}
 
 $password_segura = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO user 
-(nome_complito, username, password, user_de_criacao, data_de_criacao) 
-VALUES (?, ?, ?, ?, ?)";
+        (nome_complito, username, password, data_de_criacao, user_de_criacao, Cursos) 
+        VALUES (?, ?, ?, ?, ?, ?)";
+
 
 $stmt = $conn->prepare($sql);
+$stmt->bind_param("ssssss", $nome, $username, $password_segura, $data, $user_de_criacao, $curso);
 
-$stmt->bind_param("sssss", $nome, $username, $password_segura, $curso, $data);
 
 if ($stmt->execute()) {
-    echo "<p style='color:green'>✅ Registo feito com sucesso!</p>";
-    echo "<a href='index.php'>← Voltar</a>";
+    echo "<div style='font-family:sans-serif; text-align:center; margin-top:50px;'>";
+    echo "<p style='color:green; font-size:20px;'>✅ Utilizador registado com sucesso!</p>";
+    echo "<p>Registado por: <strong>" . $user_de_criacao . "</strong></p>";
+    echo "<p>Curso: <strong>" . $curso . "</strong></p>";
+    echo "<br><a href='../index.php'>← Registar outro</a>";
+    echo "</div>";
 } else {
-    echo "<p style='color:red'>❌ Erro: " . $conn->error . "</p>";
+    echo "<p style='color:red;'>❌ Erro: " . $conn->error . "</p>";
 }
 
 $stmt->close();

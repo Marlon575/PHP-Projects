@@ -26,12 +26,26 @@
             <input type="password" name="password"
             placeholder="Minimo 6 caracteres" required>
 
-           <label>Tipo de Utilizador:</label>
-    <select name="user_de_criacao" required>
-        <option value="">Selecione o tipo</option>
-        <option value="Principal">👑 Utilizador Principal</option>
-        <option value="Secundario">👤 Utilizador Secundário</option>
-    </select>
+            <label>Tipo de Administrador:</label>
+            <select name="user_de_criacao" required>
+                <option value="">Selecione o tipo</option>
+                <option value="Principal">Adim 1</option>
+                <option value="Secundario">Adim 2</option>
+            </select>
+
+            <label>PIN de Administrador:</label>
+            <input type="password" name="pin"
+            placeholder="Digite o seu  PIN de Administrador" required>
+
+            <label>Curso</label>
+            <select name="curso" required>
+                <option value="">Selecione o curso</option>
+                <option value="PWM">Programação Web e Mobile</option>
+                <option value="Engenharia informática">Engenharia de Informática</option>
+                <option value="RT">Redes e Telecomunicações</option>
+                <option value="SO">Sistemas operativos</option>
+                
+            </select>
 
             <div class="botoes">
             <button type="submit">Registrar</button>
