@@ -10,7 +10,7 @@
 <body>
     <div class="card">
         <h2> Registro </h2>
-        <p class ="sub"> Preencha os campos registro. </p>
+        <p class ="sb"> Preencha os campos registro. </p>
 
 <form action="Registro_PHP/processar.php" method="POST">
 
