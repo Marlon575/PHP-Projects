@@ -1,0 +1,183 @@
+/* ========================
+   IMPORTAÇÃO DE FONTE
+   ======================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+/* ========================
+   VARIÁVEIS DE COR
+   ======================== */
+:root {
+    --azul-escuro:  #1a237e;
+    --azul:         #3949ab;
+    --azul-claro:   #e8eaf6;
+    --verde:        #2e7d32;
+    --verde-claro:  #e8f5e9;
+    --branco:       #ffffff;
+    --cinza-borda:  #c5cae9;
+    --texto:        #212121;
+}
+
+
+/* ========================
+   RESET GERAL
+   ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================
+   CORPO DA PÁGINA
+   ======================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--azul-claro);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+/* ========================
+   CONTAINER PRINCIPAL
+   ======================== */
+.container {
+    width: 100%;
+    max-width: 540px;
+}
+
+
+/* ========================
+   CARTÃO BRANCO
+   ======================== */
+.card {
+    background: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(26, 35, 126, 0.15);
+    overflow: hidden;
+}
+
+
+/* ========================
+   CABEÇALHO DO CARTÃO
+   ======================== */
+.card-header {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    padding: 28px 32px;
+}
+
+.card-header h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-header p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+
+/* ========================
+   FORMULÁRIO
+   ======================== */
+form {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ========================
+   GRUPO: LABEL + INPUT
+   ======================== */
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 0.80rem;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+/* ========================
+   INPUTS E SELECTS
+   ======================== */
+input,
+select {
+    border: 2px solid var(--cinza-borda);
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--texto);
+    background: var(--branco);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Quando o campo está em foco */
+input:focus,
+select:focus {
+    border-color: var(--azul);
+}
+
+/* Estado de erro — aplicado pelo JavaScript */
+input.erro,
+select.erro {
+    border-color: #c62828;
+    background-color: #ffebee;
+}
+
+
+/* ========================
+   BOTÃO DE SUBMISSÃO
+   ======================== */
+.btn-registar {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 4px;
+}
+
+.btn-registar:hover {
+    background: var(--azul);
+}
+
+.btn-registar:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================
+   ALERTA DE SUCESSO
+   ======================== */
+.alerta.sucesso {
+    background: var(--verde-claro);
+    color: var(--verde);
+    border-left: 4px solid var(--verde);
+    padding: 14px 20px;
+    font-weight: 500;
+    font-size: 0.90rem;
+}
